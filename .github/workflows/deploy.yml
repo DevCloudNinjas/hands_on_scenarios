@@ -89,7 +89,7 @@ jobs:
 
       # Generate cost estimate using Infracost
       - name: Generate Infracost estimate
-        uses: infracost/infracost-action@v2
+        uses: infracost/actions/setup@v3
         if: github.event_name == 'pull_request'
         with:
           path: ${{ env.TF_WORKING_DIR }}
