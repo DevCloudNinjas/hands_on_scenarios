@@ -31,7 +31,12 @@ env:
   ECR_REPOSITORY: flask-application
   ECS_CLUSTER: first-django-cluster
   ECS_SERVICE: first-django-service
-  TF_WORKING_DIR: ./terraform
+  TF_WORKING_DIR: .
+
+permissions:
+  id-token: write  # Required for OIDC authentication
+  contents: read   # Required for actions/checkout
+
 
 jobs:
   # Job to validate Terraform code and provide cost estimates
